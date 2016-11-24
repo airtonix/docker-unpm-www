@@ -1,6 +1,8 @@
 
 FROM mhart/alpine-node:6
 
+MAINTAINER airtonix "airtonix@gmail.com"
+
 ENV UNPM_FALLBACK https://registry.npmjs.com/
 
 ENV UNPM_WWW_PORT 8999
@@ -13,7 +15,7 @@ VOLUME ${UNPM_WWW_STATIC}
 
 EXPOSE 8999
 
-RUN npm install -g unpm-www --registry ${UNPM_FALLBACK}
+RUN npm install -g unpm-www@1.8.0 --registry ${UNPM_FALLBACK}
 
 ENTRYPOINT unpm-www \
 	--registry ${UNPM_WWW_REGISTRY} \
