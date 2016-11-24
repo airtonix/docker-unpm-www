@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  web:
+    build: .
+    ports:
+      - "8999:8999"
+    links:
+      - "registry:registry"
+    environment:
+      - UNPM_WWW_REGISTRY=http://registry:8123
+
+  registry:
+    image: 'morlay/unpm'
+    ports:
+      - '8123:8123'
+    volumes:
+      - './data:/unpm/data'
