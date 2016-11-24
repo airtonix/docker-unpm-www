@@ -1,6 +1,8 @@
 
 FROM mhart/alpine-node:6
 
+MAINTAINER airtonix "airtonix@gmail.com"
+
 ENV UNPM_FALLBACK https://registry.npmjs.com/
 
 ENV UNPM_WWW_PORT 8999
